@@ -90,8 +90,8 @@ axios.get('https://api.covid19api.com/dayone/country/australia/status/confirmed/
     console.table(covid.longTermCovids.covids.Victoria);
 
     const now = new Date(Date.now());
-    uploadString(JSON.stringify(covid), `${Constants.FILE_NAME}_${now.getHours()}_${now.getMinutes()}__${now.getDate()}_${now.getMonth() + 1}`);
-    // uploadString(JSON.stringify(covid), Constants.FILE_NAME);
+    // uploadString(JSON.stringify(covid), `${Constants.FILE_NAME}_${now.getHours()}_${now.getMinutes()}__${now.getDate()}_${now.getMonth() + 1}`);
+    uploadString(JSON.stringify(covid), Constants.FILE_NAME);
 
   }).catch(err => {
     console.log('err:', err);
