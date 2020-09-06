@@ -1,0 +1,7 @@
+org: jasonkim7288
+app: covid
+component: express
+name: express-starter
+
+inputs:
+  src: ./
