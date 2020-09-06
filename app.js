@@ -35,7 +35,7 @@ const uploadString = (str, filename) => {
   })
 }
 
-// setInterval(() => {
+setInterval(() => {
   axios.get('https://api.covid19api.com/dayone/country/australia/status/confirmed/live')
     .then(res => {
       const covids = res.data;
@@ -98,7 +98,7 @@ const uploadString = (str, filename) => {
     });
 
 // }, 1000 * 60 * 60 * 12);
-// }, 1000 * 60 * 60);
+}, 1000 * 60 * 60);
 
 app.get('/', (req, res) => {
   if (covid) {
