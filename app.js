@@ -3,7 +3,7 @@ const axios = require('axios');
 const AWS = require('aws-sdk');
 const fs = require('fs');
 var moment = require('moment');
-const Constants = require('./covid/constants.js')
+const Constants = require('./constants.js')
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
@@ -36,10 +36,10 @@ const uploadString = (str, filename) => {
 }
 
 // setInterval(() => {
-  // axios.get('https://api.covid19api.com/dayone/country/australia/status/confirmed/live')
-  //   .then(res => {
-      // const covids = res.data;
-      const covids = JSON.parse(Constants.COVIDS_TEMP);
+  axios.get('https://api.covid19api.com/dayone/country/australia/status/confirmed/live')
+    .then(res => {
+      const covids = res.data;
+      // const covids = JSON.parse(Constants.COVIDS_TEMP);
 
       // get last 2 days info and subtract cases to get the latest 24 hours cases
       let twoDaysCovids = new Array(2).fill(0).map(a => []);
@@ -90,13 +90,15 @@ const uploadString = (str, filename) => {
       console.log(covid);
       console.table(covid.longTermCovids.covids.Victoria);
 
-      uploadString(JSON.stringify(covid), Constants.FILE_NAME);
+      const now = new Date(Date.now());
+      uploadString(JSON.stringify(covid), `${Constants.FILE_NAME}_${now.getHours()}_${now.getMinutes()}__${now.getDate()}_${now.getMonth() + 1}`);
 
-    // }).catch(err => {
-    //   console.log('err:', err);
-    // });
+    }).catch(err => {
+      console.log('err:', err);
+    });
 
-// }, 60 * 60 * 12);
+// }, 1000 * 60 * 60 * 12);
+// }, 1000 * 60 * 60);
 
 app.get('/', (req, res) => {
   if (covid) {
