@@ -1,4 +1,4 @@
-const express = require('express');
+// const express = require('express');
 const axios = require('axios');
 const AWS = require('aws-sdk');
 const fs = require('fs');
@@ -9,8 +9,8 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-const app = express();
-app.use(express.json());
+// const app = express();
+// app.use(express.json());
 
 var covid = null;
 
@@ -108,4 +108,4 @@ axios.get('https://api.covid19api.com/dayone/country/australia/status/confirmed/
 
 // app.listen(8080, () => console.log(`Listening on port 8080...`));
 
-module.exports = app;
+// module.exports = app;
