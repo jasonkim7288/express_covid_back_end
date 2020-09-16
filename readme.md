@@ -1,10 +1,16 @@
-# Covid back-end
+# Covid back-end app
 
 ## Link
 ### Github link : https://github.com/jasonkim7288/express_covid_back_end
 
 ## Description
-Covid API(https://documenter.getpostman.com/view/10808728/SzS8rjbc) offers daily covid-19 statistics. However the number of access per hour or day is quite small. This covid back-end app gets the data from Covid API 4 times a day, and store it into the remote storage so that my another covid app (inside of 'OK Jason' app) can access this information frequently.
+Covid API(https://documenter.getpostman.com/view/10808728/SzS8rjbc) offers daily covid-19 statistics. However the number of access per hour or day is quite small. This covid back-end app gets the data from Covid API 4 times a day, and stores it into the remote storage so that the front-end covid app (inside of 'OK Jason' app) can access this information more frequently.
+
+## Front-end app using this back end
+### 'OK Jason' app
+- Github link : https://github.com/jasonkim7288/react_ok_jason
+- Deployed app link : https://okjason.netlify.app
+- Say "OK Jason" and "Show me the cases of Covid-19" or just "Covid-19".
 
 ## JSON format
 ```js
