@@ -64,6 +64,8 @@ Covid API(https://documenter.getpostman.com/view/10808728/SzS8rjbc) offers daily
         "Status": "confirmed",
         "Date": "2020-04-30T00:00:00Z"
       }, {
+
+      ...
 ```
 
 ## Tech stack
